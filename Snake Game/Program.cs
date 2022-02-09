@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Text;
+using System.IO;
+using System.Threading;
 
 namespace Name
 {
@@ -22,12 +24,17 @@ namespace Name
 
         int[] snakeX = new int[50];
         int[] snakeY = new int[50];
+       
 
         public List<Position> position = new List<Position>();
 
         int fruitX;
         int fruitY;
+        int wallX;
+        int wallY;
         public int snakeSize = 3;
+        List<int> wallsX = new List<int>();
+        List<int> wallsY = new List<int>();
 
         ConsoleKeyInfo keyInfo = new ConsoleKeyInfo();
         char key = 'W';
@@ -43,6 +50,7 @@ namespace Name
         }
         public void Board()
         {
+           
             //Console.BackgroundColor = ConsoleColor.Gray;
             Console.ForegroundColor = ConsoleColor.Gray;
             Console.Clear();
@@ -99,6 +107,19 @@ namespace Name
         }
         public void Logic()
         {
+            if(wallsX.Count > 0)
+            {
+                for (int i = 0; i < wallsX.Count; i++)
+                {
+                    if (snakeX[0] == wallsX[i])
+                    {
+                        if (snakeY[0] == wallsY[i])
+                        {
+                            throw new SnakeRangeException();
+                        }
+                    }
+                }
+            }
             if (snakeX[0] == fruitX)
             {
                 if (snakeY[0] == fruitY)
@@ -107,6 +128,15 @@ namespace Name
                     Score();
                     fruitX = random.Next(4, boardWidth - 4);
                     fruitY = random.Next(4, boardHeight - 4);
+
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    wallX = random.Next(4, boardWidth - 4);
+                    wallY = random.Next(4, boardHeight - 4);
+                    wallsX.Add(wallX);
+                    wallsY.Add(wallY);
+                    Console.SetCursorPosition(wallX, wallY);
+                    Console.Write("=");
+                    Console.ForegroundColor = ConsoleColor.Gray;
                 }
             }
             for (int i = snakeSize; i > 0; i--)
@@ -138,11 +168,11 @@ namespace Name
                 bool isInrange = snakeX[i] > 2 && snakeX[i] < 52 && snakeY[i] > 2 && snakeY[i] < 22;
                 if (isInrange)
                 {
-                    if (i == 0) 
+                    if (i == 0)
                     {
-                        WritePoint(snakeX[i], snakeY[i], '*'); 
+                        WritePoint(snakeX[i], snakeY[i], '+');
                     }
-                    else WritePoint(snakeX[i], snakeY[i], '▀');
+                    else WritePoint(snakeX[i], snakeY[i], '0');
                 }
                 else if (snakeX[i] != 0)
                 {
@@ -173,6 +203,10 @@ namespace Name
                 Console.WriteLine($"\n\n\nYou died!");
                 Console.ForegroundColor = ConsoleColor.Gray;
                 Console.WriteLine($"Your Score -> {snake.snakeSize}\n");
+                using (StreamWriter writer = new StreamWriter("memory.txt", true))
+                {
+                    writer.WriteLine(snake.snakeSize);
+                }
                 using (StreamReader reader = new StreamReader("memory.txt"))
                 {
                     var line = reader.ReadLine();
@@ -192,10 +226,6 @@ namespace Name
                     {
                         Console.WriteLine($"Best score -> {bestScore}\n\n");
                     }
-                }
-                using (StreamWriter writer = new StreamWriter("memory.txt", true))
-                {
-                    writer.WriteLine(snake.snakeSize);
                 }
 
                 for (int i = 0; i < 5; i++)
