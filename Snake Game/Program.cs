@@ -8,9 +8,13 @@ using System.Threading;
 
 namespace Name
 {
-    public class SnakeRangeException : Exception
+        public class SnakeRangeException : Exception
     {
-        public SnakeRangeException() { }
+        public string Msg { get; set; }
+        public SnakeRangeException(string msg)
+        {
+            Msg = msg;
+        }
     }
     class Position
     {
@@ -24,7 +28,9 @@ namespace Name
 
         int[] snakeX = new int[50];
         int[] snakeY = new int[50];
-       
+
+        Position headPos = new Position();
+
 
         public List<Position> position = new List<Position>();
 
@@ -50,7 +56,7 @@ namespace Name
         }
         public void Board()
         {
-           
+
             //Console.BackgroundColor = ConsoleColor.Gray;
             Console.ForegroundColor = ConsoleColor.Gray;
             Console.Clear();
@@ -107,7 +113,7 @@ namespace Name
         }
         public void Logic()
         {
-            if(wallsX.Count > 0)
+            if (wallsX.Count > 0)
             {
                 for (int i = 0; i < wallsX.Count; i++)
                 {
@@ -115,7 +121,7 @@ namespace Name
                     {
                         if (snakeY[0] == wallsY[i])
                         {
-                            throw new SnakeRangeException();
+                            throw new SnakeRangeException("Died from RIPbox!");
                         }
                     }
                 }
@@ -170,13 +176,31 @@ namespace Name
                 {
                     if (i == 0)
                     {
-                        WritePoint(snakeX[i], snakeY[i], '+');
+                        Position wantedSnakePos = new Position()
+                        {
+                            X = snakeX[i],
+                            Y = snakeY[i]
+                        };
+                        headPos = wantedSnakePos;
+                        WritePoint(wantedSnakePos.X, wantedSnakePos.Y, '+');
                     }
-                    else WritePoint(snakeX[i], snakeY[i], '0');
+                    else
+                    {
+                        Position wantedSnakePos = new Position()
+                        {
+                            X = snakeX[i],
+                            Y = snakeY[i]
+                        };
+                        if (wantedSnakePos.X == headPos.X && wantedSnakePos.Y == headPos.Y)
+                        {
+                            throw new SnakeRangeException("You bited your tail!");
+                        }
+                        WritePoint(snakeX[i], snakeY[i], '0');
+                    }
                 }
                 else if (snakeX[i] != 0)
                 {
-                    throw new SnakeRangeException();
+                    throw new SnakeRangeException("Died from board!");
                 }
                 WriteFruit(fruitX, fruitY);
             }
@@ -194,9 +218,8 @@ namespace Name
                     snake.Input();
                     snake.Logic();
                 }
-                Console.ReadKey();
             }
-            catch (Exception ex)
+            catch (SnakeRangeException ex)
             {
                 Console.Clear();
                 Console.ForegroundColor = ConsoleColor.Red;
@@ -224,6 +247,7 @@ namespace Name
                     }
                     if (!isNewBestScore)
                     {
+                        Console.WriteLine($"{ex.Msg}{Environment.NewLine}");
                         Console.WriteLine($"Best score -> {bestScore}\n\n");
                     }
                 }
