@@ -13,3 +13,18 @@ F:\3_DavidDocuments\Work\SOFT-UNI\Advanced\Snake Game\Snake Game\obj\Debug\net6.
 F:\3_DavidDocuments\Work\SOFT-UNI\Advanced\Snake Game\Snake Game\obj\Debug\net6.0\ref\Snake Game.dll
 F:\3_DavidDocuments\Work\SOFT-UNI\Advanced\Snake Game\Snake Game\obj\Debug\net6.0\Snake Game.pdb
 F:\3_DavidDocuments\Work\SOFT-UNI\Advanced\Snake Game\Snake Game\obj\Debug\net6.0\Snake Game.genruntimeconfig.cache
+D:\3_DavidDocuments\SnakeGame\Snake Game\bin\Debug\net6.0\Snake Game.exe
+D:\3_DavidDocuments\SnakeGame\Snake Game\bin\Debug\net6.0\Snake Game.deps.json
+D:\3_DavidDocuments\SnakeGame\Snake Game\bin\Debug\net6.0\Snake Game.runtimeconfig.json
+D:\3_DavidDocuments\SnakeGame\Snake Game\bin\Debug\net6.0\Snake Game.dll
+D:\3_DavidDocuments\SnakeGame\Snake Game\bin\Debug\net6.0\ref\Snake Game.dll
+D:\3_DavidDocuments\SnakeGame\Snake Game\bin\Debug\net6.0\Snake Game.pdb
+D:\3_DavidDocuments\SnakeGame\Snake Game\obj\Debug\net6.0\Snake Game.csproj.AssemblyReference.cache
+D:\3_DavidDocuments\SnakeGame\Snake Game\obj\Debug\net6.0\Snake Game.GeneratedMSBuildEditorConfig.editorconfig
+D:\3_DavidDocuments\SnakeGame\Snake Game\obj\Debug\net6.0\Snake Game.AssemblyInfoInputs.cache
+D:\3_DavidDocuments\SnakeGame\Snake Game\obj\Debug\net6.0\Snake Game.AssemblyInfo.cs
+D:\3_DavidDocuments\SnakeGame\Snake Game\obj\Debug\net6.0\Snake Game.csproj.CoreCompileInputs.cache
+D:\3_DavidDocuments\SnakeGame\Snake Game\obj\Debug\net6.0\Snake Game.dll
+D:\3_DavidDocuments\SnakeGame\Snake Game\obj\Debug\net6.0\ref\Snake Game.dll
+D:\3_DavidDocuments\SnakeGame\Snake Game\obj\Debug\net6.0\Snake Game.pdb
+D:\3_DavidDocuments\SnakeGame\Snake Game\obj\Debug\net6.0\Snake Game.genruntimeconfig.cache

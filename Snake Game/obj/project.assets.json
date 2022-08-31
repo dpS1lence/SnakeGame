@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\3_DavidDocuments\\Work\\SOFT-UNI\\Advanced\\Snake Game\\Snake Game\\Snake Game.csproj",
+      "projectUniqueName": "D:\\3_DavidDocuments\\SnakeGame\\Snake Game\\Snake Game.csproj",
       "projectName": "Snake Game",
-      "projectPath": "F:\\3_DavidDocuments\\Work\\SOFT-UNI\\Advanced\\Snake Game\\Snake Game\\Snake Game.csproj",
+      "projectPath": "D:\\3_DavidDocuments\\SnakeGame\\Snake Game\\Snake Game.csproj",
       "packagesPath": "C:\\Users\\erpet\\.nuget\\packages\\",
-      "outputPath": "F:\\3_DavidDocuments\\Work\\SOFT-UNI\\Advanced\\Snake Game\\Snake Game\\obj\\",
+      "outputPath": "D:\\3_DavidDocuments\\SnakeGame\\Snake Game\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
