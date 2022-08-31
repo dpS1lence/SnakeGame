@@ -8,10 +8,9 @@ namespace Snake_Game.Exceptions
 {
     public class SnakeRangeException : Exception
     {
-        public string Msg { get; set; }
-        public SnakeRangeException(string msg)
-        {
-            Msg = msg;
-        }
+        public SnakeRangeException() { }
+
+        public SnakeRangeException(string message)
+            : base(message) { }
     }
 }

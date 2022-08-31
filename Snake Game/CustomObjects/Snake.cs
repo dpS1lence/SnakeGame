@@ -16,13 +16,21 @@ namespace Snake_Game.CustomObjects
         private readonly int[] snakeX = new int[50];
         private readonly int[] snakeY = new int[50];
 
+        private int snakeSize = 3;
+
         private Position HeadPos { get; set; }
 
         private int FruitX { get; set; }
         private int FruitY { get; set; }
         private int WallX { get; set; }
         private int WallY { get; set; }
-        public int snakeSize = 3;
+        public int SnakeSize
+        {
+            get
+            {
+                return snakeSize;
+            }
+        }
         private List<int> WallsX { get; set; }
         private List<int> WallsY { get; set; }
 
@@ -164,7 +172,7 @@ namespace Snake_Game.CustomObjects
                 {
                     if (i == 0)
                     {
-                        Position wantedSnakePos = new Position()
+                        Position wantedSnakePos = new()
                         {
                             X = snakeX[i],
                             Y = snakeY[i]
@@ -174,7 +182,7 @@ namespace Snake_Game.CustomObjects
                     }
                     else
                     {
-                        Position wantedSnakePos = new Position()
+                        Position wantedSnakePos = new()
                         {
                             X = snakeX[i],
                             Y = snakeY[i]
