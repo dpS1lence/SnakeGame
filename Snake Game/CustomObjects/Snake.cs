@@ -117,7 +117,7 @@ namespace Snake_Game.CustomObjects
                     {
                         if (snakeY[0] == WallsY[i])
                         {
-                            throw new SnakeRangeException("Died from RIPbox!");
+                            throw new SnakeException("Died from RIPbox!");
                         }
                     }
                 }
@@ -189,14 +189,14 @@ namespace Snake_Game.CustomObjects
                         };
                         if (wantedSnakePos.X == HeadPos.X && wantedSnakePos.Y == HeadPos.Y)
                         {
-                            throw new SnakeRangeException("You bited your tail!");
+                            throw new SnakeException("You bited your tail!");
                         }
                         WritePoint(snakeX[i], snakeY[i], '0');
                     }
                 }
                 else if (snakeX[i] != 0)
                 {
-                    throw new SnakeRangeException("Died from board!");
+                    throw new SnakeException("Died from board!");
                 }
                 WriteFruit(FruitX, FruitY);
             }

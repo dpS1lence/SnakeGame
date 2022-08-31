@@ -25,7 +25,7 @@ namespace Name
                     snake.Logic();
                 }
             }
-            catch (SnakeRangeException ex)
+            catch (SnakeException ex)
             {
                 Console.Clear();
                 Console.ForegroundColor = ConsoleColor.Red;
