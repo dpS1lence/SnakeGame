@@ -189,7 +189,7 @@ namespace Snake_Game.CustomObjects
                         };
                         if (wantedSnakePos.X == HeadPos.X && wantedSnakePos.Y == HeadPos.Y)
                         {
-                            throw new SnakeException("You bited your tail!");
+                            throw new SnakeException("You bit your tail!");
                         }
                         WritePoint(snakeX[i], snakeY[i], '0');
                     }

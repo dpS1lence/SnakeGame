@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Snake_Game.Exceptions
 {
-    public class SnakeRangeException : Exception
+    public class SnakeException : Exception
     {
-        public SnakeRangeException() { }
+        public SnakeException() { }
 
-        public SnakeRangeException(string message)
+        public SnakeException(string message)
             : base(message) { }
     }
 }
